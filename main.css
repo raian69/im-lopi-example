@@ -22,11 +22,22 @@ body {
     height: 100vh;
 }
 
-#popup {
+@keyframes rotate {
+    100% {
+        transform: rotate(calc(var(--rotato) + 360deg)) scale(0.2);
+        opacity: 0.2;
+    }
+}
+
+.popup {
+    --rotato: 0deg;
     position: absolute;
+    z-index: -1;
     width: 300px;
-    height: 300px;
-    left: 50%;
+    height: auto;
+    left: 0;
+    top: 0;
+    animation: rotate 1.5s infinite ease-in;
 }
 
 .control-wrapper {

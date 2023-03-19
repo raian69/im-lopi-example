@@ -21,12 +21,26 @@ function playRandomSound() {
 }
 
 function spawnalopi() {
-    const popup = getPopup();
-    console.log(popup);
+    let popup = getPopup();
     const popupArea = document.getElementById('popup-bg');
+    
+    const popupWidth = popup.width;
+    const popupHeight = popup.height;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    
+    popup.style.left = `${Math.random() * (windowWidth - popupWidth)}px`;
+    popup.style.top = `${Math.random() * (windowHeight - popupHeight)}px`;
+    const rotation = Math.random() * 360;
+    popup.style.transform = `rotate(${rotation}deg)`;
+    popup.style.setProperty("--rotato", `${rotation}deg`);
+    
+    console.log(popup.style.left)
+    
     popupArea.appendChild(popup);
-
-    setTimeout(() => { popupArea.removeChild(popup) }, 2000)
+    setTimeout(() => { 
+        popupArea.removeChild(popup)
+    }, 1000)
 }
 
 function getPopup() {
@@ -34,7 +48,7 @@ function getPopup() {
         lopiImage = document.createElement("img");
         lopiImage.alt = "Picture of Lopi";
         lopiImage.src = lopiImageUrl;
-        lopiImage.id = "popup";
+        lopiImage.className = "popup";
     }
 
     return lopiImage.cloneNode();
