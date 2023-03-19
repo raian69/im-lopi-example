@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("media/images/background.avif");
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.sdt {
+    font-size: 0.5em;
+    color: purple
+}
+
+#popup-bg {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#popup {
+    position: absolute;
+    background-color: aqua;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+}
+
+.control-wrapper {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.control-wrapper img {
+    z-index: -2;
+    margin: 0 auto;
+    width: auto;
+    height: 500px;
+    max-height: 50%;
+}
+
+.control-wrapper h1 {
+   margin-bottom: -0.5em;
+}
+
+.control-wrapper p {
+    margin-bottom: 0;
+ }
+
+.control-wrapper a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.control-wrapper a:hover {
+    text-decoration: none;
+    color: #8d0276;
+    cursor: pointer;
+}
+
+.control-wrapper button {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1em;
+    border: none;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #a2a9c2;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.control-wrapper button:hover {
+    text-decoration: none;
+    filter: brightness(0.9);
+}
+
+ 
+ 
