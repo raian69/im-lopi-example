@@ -24,9 +24,8 @@ body {
 
 #popup {
     position: absolute;
-    background-color: aqua;
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
     left: 50%;
 }
 
@@ -39,11 +38,15 @@ body {
 }
 
 .control-wrapper img {
+    padding: 20px;
+    background-color: white;
     z-index: -2;
     margin: 0 auto;
     width: auto;
     height: 500px;
     max-height: 50%;
+    border-radius: 100%;
+    outline: rgb(255, 147, 165) solid 20px;
 }
 
 .control-wrapper h1 {
