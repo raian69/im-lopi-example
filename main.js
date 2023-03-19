@@ -11,13 +11,19 @@ function incrementCount() {
     setCookie("lopi-count", count)
 }
 
-function playRandomSound() {
+async function playRandomSound() {
     const ri = Math.floor(Math.random() * 3);
     
     // load sound
     if (sounds[ri] === null)
         sounds[ri] = new Audio(soundUrls[ri]);
-    sounds[ri].play();
+
+    const sound = sounds[ri].cloneNode();
+    return new Promise((resolve, reject) => {
+        sound.play();
+        resolve();
+        console.log("Playing sound")
+    })
 }
 
 function spawnalopi() {
@@ -96,12 +102,12 @@ if (cookieExists('lopi-count')) {
 
 // we'll load media on a "as-needed" basis to improve initial load times.
 const soundUrls = [
-    "media/audio/1.mp3",
-    "media/audio/2.mp3",
-    "media/audio/3.mp3",
+    "/media/audio/1.mp3",
+    "/media/audio/2.mp3",
+    "/media/audio/3.mp3",
 ]
 const sounds = [
     null, null, null
 ]
-const lopiImageUrl = "media/images/lopi.png"
+const lopiImageUrl = "/media/images/lopi.png"
 var lopiImage = null;
