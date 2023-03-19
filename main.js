@@ -11,19 +11,15 @@ function incrementCount() {
     setCookie("lopi-count", count)
 }
 
-async function playRandomSound() {
+function playRandomSound() {
     const ri = Math.floor(Math.random() * 3);
     
     // load sound
     if (sounds[ri] === null)
         sounds[ri] = new Audio(soundUrls[ri]);
 
-    const sound = sounds[ri].cloneNode();
-    return new Promise((resolve, reject) => {
-        sound.play();
-        resolve();
-        console.log("Playing sound")
-    })
+    const sound = sounds[ri].cloneNode();    
+    sound.play();
 }
 
 function spawnalopi() {
@@ -40,9 +36,7 @@ function spawnalopi() {
     const rotation = Math.random() * 360;
     popup.style.transform = `rotate(${rotation}deg)`;
     popup.style.setProperty("--rotato", `${rotation}deg`);
-    
-    console.log(popup.style.left)
-    
+        
     popupArea.appendChild(popup);
     setTimeout(() => { 
         popupArea.removeChild(popup)
