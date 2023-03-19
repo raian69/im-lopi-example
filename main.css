@@ -5,7 +5,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-image: url("media/images/background.avif");
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: "Comic Sans MS", "Comic Sans";
 }
 
 .sdt {
@@ -59,8 +59,8 @@ body {
     max-height: min(40%, 300px);
     width: auto;
     height: auto;
-    border-radius: 100%;
     border: rgb(255, 147, 165) solid 20px;
+    border-radius: 100%;
 }
 
 .control-wrapper h1 {
